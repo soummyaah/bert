@@ -199,7 +199,9 @@ class DataProcessor(object):
     with tf.gfile.Open(input_file, "r") as f:
       reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
       lines = []
-      for line in reader:
+      for count, line in enumerate(reader):
+        if count==0:
+            print line
         lines.append(line)
       return lines
 
