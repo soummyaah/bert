@@ -282,8 +282,8 @@ class MnliProcessor(DataProcessor):
       if i == 0:
         continue
       guid = "%s-%s" % (set_type, tokenization.convert_to_unicode(line[0]))
-      text_a = tokenization.convert_to_unicode(line[8])
-      text_b = tokenization.convert_to_unicode(line[9])
+      text_a = tokenization.convert_to_unicode(line[1])
+      text_b = tokenization.convert_to_unicode(line[2])
       if set_type == "test":
         label = "contradiction"
       else:
