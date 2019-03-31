@@ -200,8 +200,8 @@ class DataProcessor(object):
       reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
       lines = []
       for count, line in enumerate(reader):
-        if count==0:
-            print line
+#         if count==0:
+#             print line
         lines.append(line)
       return lines
 
@@ -265,13 +265,13 @@ class MnliProcessor(DataProcessor):
   def get_dev_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "dev.tsv")),
+        self._read_tsv(os.path.join(data_dir, "dev_matched.tsv")),
         "dev")
 
   def get_test_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
+        self._read_tsv(os.path.join(data_dir, "test_matched.tsv")), "test")
 
   def get_labels(self):
     """See base class."""
